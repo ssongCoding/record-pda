@@ -5,7 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ProductMapRepository {
+public class ProductMapRepository
+    implements ProductRepository{
     private final Map<Integer, Product> db
             = new HashMap<>();
     private int id = 1;
@@ -22,7 +23,7 @@ public class ProductMapRepository {
         return new ArrayList<>(db.values());
     }
 
-    public Product saveProduct(Product product) {
+    public Product save(Product product) {
         db.put(id, product);
         return db.get(id++);
     }

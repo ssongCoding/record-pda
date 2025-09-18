@@ -1,9 +1,7 @@
 package com.example.record.product;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public class ProductService {
@@ -28,6 +26,6 @@ public class ProductService {
     public Product saveProduct(RecordRegisterDto recordRegisterDto) {
         // 로직...
         Product newProduct = recordRegisterDto.toEntity();
-        return productMapRepository.saveProduct(newProduct);
+        return productMapRepository.save(newProduct);
     }
 }

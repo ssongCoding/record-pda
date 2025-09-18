@@ -12,14 +12,19 @@ import java.time.LocalDate;
 public class ProductApplicationRunner
         implements ApplicationRunner {
     @Autowired
-    ProductDBRepository productDBRepository;
+//    ProductDBRepository productDBRepository;
+    ProductJPARepository productJPARepository;
 
     @Transactional
     @Override
     public void run(ApplicationArguments args) throws Exception {
-         productDBRepository.save(new Product(
-                 "heartbreaker", "GD",
-                 30000, LocalDate.of(2009, 8, 18)
+        productJPARepository.save(new Product(
+                 "nextlevel", "aespa",
+                 24000, LocalDate.of(2021, 5, 17)
          ));
+//         productDBRepository.save(new Product(
+//                 "heartbreaker", "GD",
+//                 30000, LocalDate.of(2009, 8, 18)
+//         ));
     }
 }
